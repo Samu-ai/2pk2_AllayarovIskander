@@ -17,7 +17,7 @@ namespace pz_22
             get { return _okpo; }
             set 
             {
-                if (8 <= value && value < 9)
+                if (8 <= Convert.ToString(value).Length && Convert.ToString(value).Length < 9)
                 {
                     _okpo = value;
                 }
@@ -31,7 +31,7 @@ namespace pz_22
             get { return _date; }
             set
             {
-                if (new DateTime(1990, 1, 1, 0, 0, 0) < value && value < new DateTime(2022, 1, 1, 0, 0, 0))
+                if (value.CompareTo(new DateTime(1990, 1, 1, 0, 0, 0)) > 0 && value.CompareTo(new DateTime(2022, 1, 1, 0, 0, 0)) < 0)
                 {
                     if (2020 < value.Year) 
                     {
@@ -59,6 +59,10 @@ namespace pz_22
         public void GetCompanyInfo()
         {
             Console.WriteLine($"Название - {Name}\nДата регистрации = {DateOfRegistry}\nОкпо - {Okpo}");
+        }
+        public void CountCompanies()
+        {
+            Console.WriteLine($"Всего - {count_obj}\nПосле 2020 = {count_obj_after}");
         }
     }
 }
