@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Company twitter = new Company("Twitter", 12345678, DateTime.Now);
+            twitter.GetCompanyInfo();
         }
     }
 }
